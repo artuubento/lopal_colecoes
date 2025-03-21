@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type "button" onclick="adicionarAlunos()">Adicionar alunos</button>
+    <button type "button" onclick="removerUltimoAluno()">Remover alunos</button>
+    <br>
+    <output></output>
+    <script>
+
+        let alunos = ["Aline", "Arthur", "Bárbara", "Bruna Torres", "Bruna Velôso", "Cauã"];
+
+        function imprimirAlunos(){
+            document.querySelector("output").innerHTML = "";
+            for(let indice = 0; indice < alunos.length; indice++){
+                document.queryselector("output").innerHTML += alunos[indice] + "<br>";
+            }
+        }
+
+        function adicionarAlunos(){
+            let novoAluno = prompt("Digite o nome do aluno");
+            if (novoAluno) {
+                alunos.push(novoAluno);
+            }
+        
+    
+        let opcaoUsuario = confirm("Deseja adicionar mais um aluno?");
+        while(opcaoUsuario){
+            adicionarAlunos();
+            return;
+
+            }
+            imprimirAlunos()
+        }
+
+        function removerUltimoAluno(){
+            alunos.pop()
+            imprimirAlunos()
+            if(alunos.length > 0) {;
+            }else
+            alert("Não possui mais alunos pra apagar!!")
+         }
+
+
+    </script>
+    
+</body>
+</html>
